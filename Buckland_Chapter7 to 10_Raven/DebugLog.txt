@@ -1,0 +1,109 @@
+NavGraph for maps/Raven_DM1.map loaded okay
+Average edge length is 23.7036
+Neighborhood range set to 24.7036
+Partitioning navgraph nodes...
+Loading map...
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Spawn Point
+Creating a Spawn Point
+Creating a Spawn Point
+Creating a Health
+Creating a Health
+Creating a Health
+Creating a rocket_launcher
+Creating a Railgun
+Creating a shotgun
+Creating a shotgun
+Creating a rocket_launcher
+maps/Raven_DM1.map loaded okay
+BOT 403 IS STUCK!!
+deleting raven bot (id = 401)
+
+this is a bot.
+       STATISTICS
+ - Kills = 3
+ - Deaths = 2
+ - Time has survived = 95.755s ( 31.9183s/lives )
+
+deleting raven bot (id = 402)
+
+this is a bot.
+       STATISTICS
+ - Kills = 0
+ - Deaths = 3
+ - Time has survived = 95.764s ( 23.941s/lives )
+
+deleting raven bot (id = 403)
+
+this is a bot Z.
+       STATISTICS
+ - Kills = 3
+ - Deaths = 2
+ - Time has survived = 95.783s ( 31.9277s/lives )
+
+deleting raven bot (id = 404)
+
+this is a bot Z.
+       STATISTICS
+ - Kills = 2
+ - Deaths = 1
+ - Time has survived = 95.608s ( 47.804s/lives )
+
+
