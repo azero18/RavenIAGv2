@@ -1,6 +1,5 @@
 #include "Raven_Bot_Z.h"
 #include "Goal_Think_Z.h"
-#include "Raven_Goal_Types_Z.h"
 
 #include "misc/Cgdi.h"
 #include "misc/Stream_Utility_Functions.h"
@@ -14,9 +13,8 @@
 Raven_Bot_Z::Raven_Bot_Z(Raven_Game* world, Vector2D pos):
 Raven_Bot(world,pos)
 {
-	SetEntityType(type_bot_modified);
-	m_pBrain = NULL;
-	m_pBrain_Z = new Goal_Think_Z(this);
+	SetEntityType(type_bot_modified);	
+	m_pBrain = new Goal_Think_Z(this);
 }
 
 Raven_Bot_Z::~Raven_Bot_Z()

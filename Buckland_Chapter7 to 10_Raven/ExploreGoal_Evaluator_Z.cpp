@@ -6,7 +6,7 @@
 #include "RavenFeature_Z.h"
 
 #include "Goal_Think_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 
 
 

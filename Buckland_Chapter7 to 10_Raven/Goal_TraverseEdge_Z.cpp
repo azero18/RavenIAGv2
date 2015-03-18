@@ -1,5 +1,5 @@
 #include "Goal_TraverseEdge_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "Raven_SteeringBehaviors.h"
 #include "time/CrudeTimer.h"
 #include "constants.h"

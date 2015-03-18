@@ -4,7 +4,7 @@
 
 #include "Goal_Z.h"
 #include "2d/Vector2D.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "Raven_Bot_Z.h"
 
 

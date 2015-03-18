@@ -1,7 +1,7 @@
 #include "GetHealthGoal_Evaluator_Z.h"
 #include "Raven_ObjectEnumerations.h"
 #include "Goal_Think_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "misc/Stream_Utility_Functions.h"
 #include "RavenFeature_Z.h"
 

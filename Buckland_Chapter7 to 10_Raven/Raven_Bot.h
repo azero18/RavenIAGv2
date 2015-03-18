@@ -35,6 +35,9 @@ class Raven_SensoryMemory;
 
 class Raven_Bot : public MovingEntity
 {
+private:
+	  //this object handles the arbitration and processing of high level goals
+  Goal_Think*                        m_pBrain;
 protected:
 
   enum Status{alive, dead, spawning};
@@ -45,8 +48,7 @@ protected:
   //a pointer to the world data
   Raven_Game*                        m_pWorld;
 
-  //this object handles the arbitration and processing of high level goals
-  Goal_Think*                        m_pBrain;
+
 
   //this is a class that acts as the bots sensory memory. Whenever this
   //bot sees or hears an opponent, a record of the event is updated in the 

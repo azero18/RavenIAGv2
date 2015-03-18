@@ -1,6 +1,6 @@
 #include "AttackTargetGoal_Evaluator_Z.h"
 #include "Goal_Think_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "Raven_WeaponSystem.h"
 #include "Raven_ObjectEnumerations.h"
 #include "misc/cgdi.h"

@@ -3,13 +3,13 @@
 #pragma warning (disable:4786)
 
 #include "Goal_Composite_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "Raven_Bot_Z.h"
 #include "triggers/trigger.h"
 
 
 //helper function to change an item type enumeration into a goal type
-int ItemTypeToGoalType(int gt);
+int ItemTypeToGoalType_Z(int gt);
 
 
 class Goal_GetItem_Z : public Goal_Composite_Z<Raven_Bot_Z>
@@ -31,7 +31,7 @@ public:
 
   Goal_GetItem_Z(Raven_Bot_Z* pBot,
                int        item):Goal_Composite_Z<Raven_Bot_Z>(pBot,
-                                                   ItemTypeToGoalType(item)),
+                                                   ItemTypeToGoalType_Z(item)),
                                 m_iItemToGet(item),
                                 m_pGiverTrigger(0),
                                 m_bFollowingPath(false)

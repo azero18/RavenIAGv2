@@ -9,7 +9,7 @@
 #include "Goal_Explore_Z.h"
 #include "Goal_GetItem_Z.h"
 #include "Goal_Wander_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "Goal_AttackTarget_Z.h"
 
 
@@ -150,7 +150,7 @@ void Goal_Think_Z::AddGoal_Explore()
 
 void Goal_Think_Z::AddGoal_GetItem(unsigned int ItemType)
 {
-  if (notPresent(ItemTypeToGoalType(ItemType)))
+  if (notPresent(ItemTypeToGoalType_Z(ItemType)))
   {
     RemoveAllSubgoals();
     AddSubgoal( new Goal_GetItem_Z(m_pOwner, ItemType));

@@ -10,7 +10,7 @@
 #include "Goal_FollowPath_Z.h"
 
 
-int ItemTypeToGoalType(int gt)
+int ItemTypeToGoalType_Z(int gt)
 {
   switch(gt)
   {

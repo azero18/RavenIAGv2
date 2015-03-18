@@ -286,9 +286,6 @@
     <ClCompile Include="Goal_Think_Z.cpp">
       <Filter>AI\goalsZ\composite</Filter>
     </ClCompile>
-    <ClCompile Include="Raven_Goal_Types_Z.cpp">
-      <Filter>AI\goalsZ</Filter>
-    </ClCompile>
     <ClCompile Include="Goal_MoveToPosition_Z.cpp">
       <Filter>AI\goalsZ\composite</Filter>
     </ClCompile>
@@ -332,6 +329,9 @@
       <Filter>AI\goalsZ\goal evaluation</Filter>
     </ClCompile>
     <ClCompile Include="AttackTargetGoal_Evaluator_Z.cpp">
+      <Filter>AI\goalsZ\goal evaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="RavenFeature_Z.cpp">
       <Filter>AI\goalsZ\goal evaluation</Filter>
     </ClCompile>
   </ItemGroup>
@@ -689,9 +689,6 @@
     </ClInclude>
     <ClInclude Include="Goal_MoveToPosition_Z.h">
       <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Raven_Goal_Types_Z.h">
-      <Filter>AI\goalsZ</Filter>
     </ClInclude>
     <ClInclude Include="Goal_SeekToPosition_Z.h">
       <Filter>AI\goalsZ\atomic</Filter>

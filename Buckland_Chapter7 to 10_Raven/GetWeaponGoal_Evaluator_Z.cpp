@@ -4,7 +4,7 @@
 #include "Raven_Game.h"
 #include "Raven_Map.h"
 #include "Goal_Think_Z.h"
-#include "Raven_Goal_Types_Z.h"
+#include "goals/Raven_Goal_Types.h"
 #include "RavenFeature_Z.h"
 
 #include <string>
