@@ -15,6 +15,10 @@ public:
 	Raven_Bot_Z(Raven_Game* world, Vector2D pos);
 	virtual ~Raven_Bot_Z();
 
+	void Spawn(Vector2D pos);
+
+	void Update();
+
 	void Render();
 
 	//ajeitar para ter variavel que guarda um goal_think_z

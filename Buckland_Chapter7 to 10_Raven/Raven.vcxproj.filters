@@ -280,9 +280,6 @@
     <ClCompile Include="..\Common\misc\WindowUtils.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="Raven_Bot_Z.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Goal_Think_Z.cpp">
       <Filter>AI\goalsZ\composite</Filter>
     </ClCompile>
@@ -333,6 +330,9 @@
     </ClCompile>
     <ClCompile Include="RavenFeature_Z.cpp">
       <Filter>AI\goalsZ\goal evaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="Raven_Bot_Z.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -672,9 +672,6 @@
     <ClInclude Include="..\Common\misc\WindowUtils.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Raven_Bot_Z.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Goal_Z.h">
       <Filter>AI\goalsZ\atomic</Filter>
     </ClInclude>
@@ -734,6 +731,9 @@
     </ClInclude>
     <ClInclude Include="AttackTargetGoal_Evaluator_Z.h">
       <Filter>AI\goalsZ\goal evaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="Raven_Bot_Z.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

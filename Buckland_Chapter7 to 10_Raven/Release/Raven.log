@@ -1,73 +1,10 @@
-﻿Build started 3/18/2015 6:32:20 PM.
+﻿Build started 3/18/2015 8:31:42 PM.
      1>Project "C:\Users\Victor\Desktop\Raven-IAG\RavenIAGv2\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating ".\Release\Raven.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching ".\Release\Raven.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /FR".\Release\\" /Gd /TP /analyze- /errorReport:prompt AttackTargetGoal_Evaluator_Z.cpp ExploreGoal_Evaluator_Z.cpp GetHealthGoal_Evaluator_Z.cpp GetWeaponGoal_Evaluator_Z.cpp Goal_AttackTarget_Z.cpp Goal_DodgeSideToSide_Z.cpp Goal_Explore_Z.cpp Goal_FollowPath_Z.cpp Goal_GetItem_Z.cpp Goal_HuntTarget_Z.cpp Goal_MoveToPosition_Z.cpp Goal_NegotiateDoor_Z.cpp Goal_SeekToPosition_Z.cpp Goal_Think_Z.cpp Goal_TraverseEdge_Z.cpp Goal_Wander_Z.cpp RavenFeature_Z.cpp Raven_Bot.cpp Raven_Bot_Z.cpp Raven_Door.cpp Raven_Game.cpp Raven_Map.cpp Raven_SensoryMemory.cpp Raven_SteeringBehaviors.cpp Raven_TargetingSystem.cpp Raven_WeaponSystem.cpp armory\Projectile_Bolt.cpp armory\Projectile_Pellet.cpp armory\Projectile_Rocket.cpp armory\Projectile_Slug.cpp armory\Raven_Projectile.cpp armory\Raven_Weapon.cpp armory\Weapon_Blaster.cpp armory\Weapon_RailGun.cpp armory\Weapon_RocketLauncher.cpp armory\Weapon_ShotGun.cpp goals\AttackTargetGoal_Evaluator.cpp goals\ExploreGoal_Evaluator.cpp goals\GetHealthGoal_Evaluator.cpp goals\GetWeaponGoal_Evaluator.cpp goals\Goal_AdjustRange.cpp goals\Goal_AttackTarget.cpp goals\Goal_DodgeSideToSide.cpp goals\Goal_Explore.cpp goals\Goal_FollowPath.cpp goals\Goal_GetItem.cpp goals\Goal_HuntTarget.cpp goals\Goal_MoveToPosition.cpp goals\Goal_NegotiateDoor.cpp goals\Goal_SeekToPosition.cpp goals\Goal_Think.cpp goals\Goal_TraverseEdge.cpp goals\Goal_Wander.cpp goals\Raven_Feature.cpp main.cpp navigation\Raven_PathPlanner.cpp triggers\Trigger_HealthGiver.cpp triggers\Trigger_SoundNotify.cpp triggers\Trigger_WeaponGiver.cpp /Zm200  
-         AttackTargetGoal_Evaluator_Z.cpp
-         ExploreGoal_Evaluator_Z.cpp
-         GetHealthGoal_Evaluator_Z.cpp
-         GetWeaponGoal_Evaluator_Z.cpp
-         Goal_AttackTarget_Z.cpp
-         Goal_DodgeSideToSide_Z.cpp
-         Goal_Explore_Z.cpp
-         Goal_FollowPath_Z.cpp
-         Goal_GetItem_Z.cpp
-         Goal_HuntTarget_Z.cpp
-         Goal_MoveToPosition_Z.cpp
-         Goal_NegotiateDoor_Z.cpp
-         Goal_SeekToPosition_Z.cpp
-         Goal_Think_Z.cpp
-         Goal_TraverseEdge_Z.cpp
-         Goal_Wander_Z.cpp
-         RavenFeature_Z.cpp
-         Raven_Bot.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /FR".\Release\\" /Gd /TP /analyze- /errorReport:prompt Raven_Bot_Z.cpp /Zm200  
          Raven_Bot_Z.cpp
-         Raven_Door.cpp
-         Generating Code...
-         Compiling...
-         Raven_Game.cpp
-         Raven_Map.cpp
-         Raven_SensoryMemory.cpp
-         Raven_SteeringBehaviors.cpp
-         Raven_TargetingSystem.cpp
-         Raven_WeaponSystem.cpp
-         Projectile_Bolt.cpp
-         Projectile_Pellet.cpp
-         Projectile_Rocket.cpp
-         Projectile_Slug.cpp
-         Raven_Projectile.cpp
-         Raven_Weapon.cpp
-         Weapon_Blaster.cpp
-         Weapon_RailGun.cpp
-         Weapon_RocketLauncher.cpp
-         Weapon_ShotGun.cpp
-         AttackTargetGoal_Evaluator.cpp
-         ExploreGoal_Evaluator.cpp
-         GetHealthGoal_Evaluator.cpp
-         GetWeaponGoal_Evaluator.cpp
-         Generating Code...
-         Compiling...
-         Goal_AdjustRange.cpp
-         Goal_AttackTarget.cpp
-         Goal_DodgeSideToSide.cpp
-         Goal_Explore.cpp
-         Goal_FollowPath.cpp
-         Goal_GetItem.cpp
-         Goal_HuntTarget.cpp
-         Goal_MoveToPosition.cpp
-         Goal_NegotiateDoor.cpp
-         Goal_SeekToPosition.cpp
-         Goal_Think.cpp
-         Goal_TraverseEdge.cpp
-         Goal_Wander.cpp
-         Raven_Feature.cpp
-         main.cpp
-         Raven_PathPlanner.cpp
-         Trigger_HealthGiver.cpp
-         Trigger_SoundNotify.cpp
-         Trigger_WeaponGiver.cpp
-         Generating Code...
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -165,4 +102,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:01:05.76
+Time Elapsed 00:00:16.38

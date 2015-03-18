@@ -17,7 +17,7 @@ std::string GoalTypeToString::Convert(int gt)
 
   case goal_think:
 
-    return "think";
+    return "think_normal";
 
   case goal_arrive_at_position:
 
@@ -89,7 +89,7 @@ std::string GoalTypeToString::Convert(int gt)
 
   case goal_think_Z:
 
-    return "think";
+    return "think_modified";
 
   case goal_arrive_at_position_Z:
 

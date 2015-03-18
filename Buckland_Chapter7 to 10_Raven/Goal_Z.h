@@ -122,7 +122,7 @@ void  Goal_Z<entity_type>::RenderAtPos(Vector2D& pos, TypeToString* tts)const
   if (isComplete()) gdi->TextColor(0,255,0);
   if (isInactive()) gdi->TextColor(0,0,0);
   if (hasFailed()) gdi->TextColor(255,0,0);
-  if (isActive()) gdi->TextColor(0,0,255);
+  if (isActive()) gdi->TextColor(255,0,255);
 
   gdi->TextAtPos(pos.x, pos.y, tts->Convert(GetType())); 
 }

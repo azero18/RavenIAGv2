@@ -74,36 +74,39 @@ Creating a shotgun
 Creating a rocket_launcher
 Creating a Spawn Point
 maps/Raven_DM1_4spawn.map loaded okay
+Player is exorcised from bot 403
+Player is exorcised from bot 404
+Player is exorcised from bot 401
 deleting raven bot (id = 401)
 
 this is a bot.
        STATISTICS
  - Kills = 0
- - Deaths = 2
- - Time has survived = 40.837s ( 13.6123s/lives )
+ - Deaths = 0
+ - Time has survived = 34.503s ( 34.503s/lives )
 
 deleting raven bot (id = 402)
 
 this is a bot.
        STATISTICS
  - Kills = 1
- - Deaths = 1
- - Time has survived = 40.863s ( 20.4315s/lives )
+ - Deaths = 0
+ - Time has survived = 34.505s ( 34.505s/lives )
 
 deleting raven bot (id = 403)
 
 this is a bot Z.
        STATISTICS
  - Kills = 0
- - Deaths = 0
- - Time has survived = 40.882s ( 40.882s/lives )
+ - Deaths = 1
+ - Time has survived = 34.489s ( 17.2445s/lives )
 
 deleting raven bot (id = 404)
 
 this is a bot Z.
        STATISTICS
- - Kills = 2
+ - Kills = 0
  - Deaths = 0
- - Time has survived = 40.883s ( 40.883s/lives )
+ - Time has survived = 34.49s ( 34.49s/lives )
 
 

@@ -5,6 +5,8 @@
 #include "misc/Stream_Utility_Functions.h"
 #include "Raven_WeaponSystem.h"
 #include "Raven_UserOptions.h"
+#include "Raven_SensoryMemory.h"
+#include "time/Regulator.h"
 
 #include "Raven_ObjectEnumerations.h"
 
@@ -15,11 +17,71 @@ Raven_Bot(world,pos)
 {
 	SetEntityType(type_bot_modified);	
 	m_pBrain = new Goal_Think_Z(this);
+
 }
 
 Raven_Bot_Z::~Raven_Bot_Z()
 {
 	
+}
+
+
+void Raven_Bot_Z::Spawn(Vector2D pos)
+{
+	SetSpawnTime(); //NEW: marque a hora que ele "renasceu"
+    SetAlive();
+    m_pBrain->RemoveAllSubgoals();
+    m_pTargSys->ClearTarget();
+    SetPos(pos);
+    m_pWeaponSys->Initialize();
+    RestoreHealthToMaximum();
+}
+
+//-------------------------------- Update -------------------------------------
+//
+void Raven_Bot_Z::Update()
+{
+  //process the currently active goal. Note this is required even if the bot
+  //is under user control. This is because a goal is created whenever a user 
+  //clicks on an area of the map that necessitates a path planning request.
+  m_pBrain->Process();
+  
+  //Calculate the steering force and update the bot's velocity and position
+  UpdateMovement();
+
+  //if the bot is under AI control but not scripted
+  if (!isPossessed())
+  {           
+    //examine all the opponents in the bots sensory memory and select one
+    //to be the current target
+    if (m_pTargetSelectionRegulator->isReady())
+    {      
+      m_pTargSys->Update();
+    }
+
+    //appraise and arbitrate between all possible high level goals
+    if (m_pGoalArbitrationRegulator->isReady())
+    {
+       m_pBrain->Arbitrate(); 
+    }
+
+    //update the sensory memory with any visual stimulus
+    if (m_pVisionUpdateRegulator->isReady())
+    {
+      m_pSensoryMem->UpdateVision();
+    }
+  
+    //select the appropriate weapon to use from the weapons currently in
+    //the inventory
+    if (m_pWeaponSelectionRegulator->isReady())
+    {       
+      m_pWeaponSys->SelectWeapon();       
+    }
+
+    //this method aims the bot's current weapon at the current target
+    //and takes a shot if a shot is possible
+    m_pWeaponSys->TakeAimAndShoot();
+  }
 }
 
 void Raven_Bot_Z::Render()                                         
