@@ -17,7 +17,6 @@ Raven_Bot(world,pos)
 {
 	SetEntityType(type_bot_modified);	
 	m_pBrain = new Goal_Think_Z(this);
-
 }
 
 Raven_Bot_Z::~Raven_Bot_Z()
