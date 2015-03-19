@@ -14,7 +14,6 @@ struct Telegram;
 #include "misc/TypeToString.h"
 
 
-
 template <class entity_type>
 class Goal
 {
@@ -34,6 +33,8 @@ protected:
   //completed, failed)
   int             m_iStatus;
 
+  //NEW: Flag modificador
+  bool ZFlag;
 
   /* the following methods were created to factor out some of the commonality
      in the implementations of the Process method() */
@@ -51,7 +52,7 @@ public:
   Goal(entity_type*  pE, int type):m_iType(type),
                                    m_pOwner(pE),
                                    m_iStatus(inactive)
-  {}
+  {ZFlag = false;}
 
   virtual ~Goal(){}
 
@@ -69,6 +70,8 @@ public:
   //behavior
   virtual bool HandleMessage(const Telegram& msg){return false;}
 
+  //NEW: Ativar Flag de modificado
+  void setZ_On(){ZFlag = true};
 
   //a Goal is atomic and cannot aggregate subgoals yet we must implement
   //this method to provide the uniform interface required for the goal
@@ -123,11 +126,18 @@ void  Goal<entity_type>::RenderAtPos(Vector2D& pos, TypeToString* tts)const
 {
   pos.y += 15;
   gdi->TransparentText();
-  if (isComplete()) gdi->TextColor(0,255,0);
+  
+  if (!ZFlag)
+  {if (isComplete()) gdi->TextColor(0,255,0);
   if (isInactive()) gdi->TextColor(0,0,0);
   if (hasFailed()) gdi->TextColor(255,0,0);
-  if (isActive()) gdi->TextColor(0,0,255);
-
+  if (isActive()) gdi->TextColor(0,0,255);}
+  else
+  {if (isComplete()) gdi->TextColor(0,200,100);
+  if (isInactive()) gdi->TextColor(50,50,50);
+  if (hasFailed()) gdi->TextColor(255,50,0);
+  if (isActive()) gdi->TextColor(255,0,255);}
+  
   gdi->TextAtPos(pos.x, pos.y, tts->Convert(GetType())); 
 }
 

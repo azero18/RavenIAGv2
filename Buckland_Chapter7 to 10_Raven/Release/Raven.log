@@ -1,77 +1,61 @@
-﻿Build started 3/18/2015 9:19:13 PM.
+﻿Build started 3/19/2015 2:26:12 AM.
      1>Project "C:\Users\Victor\Desktop\Raven-IAG\RavenIAGv2\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Release\Raven.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /FR".\Release\\" /Gd /TP /analyze- /errorReport:prompt AttackTargetGoal_Evaluator_Z.cpp ExploreGoal_Evaluator_Z.cpp GetHealthGoal_Evaluator_Z.cpp GetWeaponGoal_Evaluator_Z.cpp Goal_AttackTarget_Z.cpp Goal_DodgeSideToSide_Z.cpp Goal_Explore_Z.cpp Goal_FollowPath_Z.cpp Goal_GetItem_Z.cpp Goal_HuntTarget_Z.cpp Goal_MoveToPosition_Z.cpp Goal_NegotiateDoor_Z.cpp Goal_SeekToPosition_Z.cpp Goal_Think_Z.cpp Goal_TraverseEdge_Z.cpp Goal_Wander_Z.cpp RavenFeature_Z.cpp Raven_Bot.cpp Raven_Bot_Z.cpp Raven_Game.cpp Raven_SensoryMemory.cpp Raven_SteeringBehaviors.cpp Raven_WeaponSystem.cpp armory\Projectile_Bolt.cpp armory\Projectile_Pellet.cpp armory\Projectile_Rocket.cpp armory\Projectile_Slug.cpp armory\Raven_Projectile.cpp armory\Weapon_Blaster.cpp armory\Weapon_RailGun.cpp armory\Weapon_RocketLauncher.cpp armory\Weapon_ShotGun.cpp goals\GetWeaponGoal_Evaluator.cpp goals\Goal_DodgeSideToSide.cpp goals\Goal_Explore.cpp goals\Goal_FollowPath.cpp goals\Goal_MoveToPosition.cpp goals\Goal_NegotiateDoor.cpp main.cpp navigation\Raven_PathPlanner.cpp triggers\Trigger_SoundNotify.cpp /Zm200  
-         AttackTargetGoal_Evaluator_Z.cpp
-         ExploreGoal_Evaluator_Z.cpp
-         GetHealthGoal_Evaluator_Z.cpp
-         GetWeaponGoal_Evaluator_Z.cpp
-         Goal_AttackTarget_Z.cpp
-         Goal_DodgeSideToSide_Z.cpp
-         Goal_Explore_Z.cpp
-         Goal_FollowPath_Z.cpp
-         Goal_GetItem_Z.cpp
-         Goal_HuntTarget_Z.cpp
-         Goal_MoveToPosition_Z.cpp
-         Goal_NegotiateDoor_Z.cpp
-         Goal_SeekToPosition_Z.cpp
-         Goal_Think_Z.cpp
-         Goal_TraverseEdge_Z.cpp
-         Goal_Wander_Z.cpp
-         RavenFeature_Z.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /FR".\Release\\" /Gd /TP /analyze- /errorReport:prompt Raven_Bot.cpp Raven_Bot_Z.cpp Raven_Door.cpp Raven_Game.cpp Raven_Map.cpp Raven_SensoryMemory.cpp Raven_SteeringBehaviors.cpp Raven_TargetingSystem.cpp Raven_WeaponSystem.cpp armory\Projectile_Bolt.cpp armory\Projectile_Pellet.cpp armory\Projectile_Rocket.cpp armory\Projectile_Slug.cpp armory\Raven_Projectile.cpp armory\Raven_Weapon.cpp armory\Weapon_Blaster.cpp armory\Weapon_RailGun.cpp armory\Weapon_RocketLauncher.cpp armory\Weapon_ShotGun.cpp goals\AttackTargetGoal_Evaluator.cpp goals\ExploreGoal_Evaluator.cpp goals\GetHealthGoal_Evaluator.cpp goals\GetWeaponGoal_Evaluator.cpp goals\Goal_AdjustRange.cpp goals\Goal_AttackTarget.cpp goals\Goal_DodgeSideToSide.cpp goals\Goal_Explore.cpp goals\Goal_FollowPath.cpp goals\Goal_GetItem.cpp goals\Goal_HuntTarget.cpp goals\Goal_MoveToPosition.cpp goals\Goal_NegotiateDoor.cpp goals\Goal_SeekToPosition.cpp goals\Goal_Think.cpp goals\Goal_TraverseEdge.cpp goals\Goal_Wander.cpp goals\Raven_Feature.cpp main.cpp navigation\Raven_PathPlanner.cpp triggers\Trigger_HealthGiver.cpp triggers\Trigger_SoundNotify.cpp triggers\Trigger_WeaponGiver.cpp /Zm200  
          Raven_Bot.cpp
          Raven_Bot_Z.cpp
+         Raven_Door.cpp
          Raven_Game.cpp
-         Generating Code...
-         Compiling...
+         Raven_Map.cpp
          Raven_SensoryMemory.cpp
          Raven_SteeringBehaviors.cpp
+         Raven_TargetingSystem.cpp
          Raven_WeaponSystem.cpp
          Projectile_Bolt.cpp
          Projectile_Pellet.cpp
          Projectile_Rocket.cpp
          Projectile_Slug.cpp
          Raven_Projectile.cpp
+         Raven_Weapon.cpp
          Weapon_Blaster.cpp
          Weapon_RailGun.cpp
          Weapon_RocketLauncher.cpp
          Weapon_ShotGun.cpp
+         AttackTargetGoal_Evaluator.cpp
+         Generating Code...
+         Compiling...
+         ExploreGoal_Evaluator.cpp
+         GetHealthGoal_Evaluator.cpp
          GetWeaponGoal_Evaluator.cpp
+         Goal_AdjustRange.cpp
+         Goal_AttackTarget.cpp
          Goal_DodgeSideToSide.cpp
          Goal_Explore.cpp
          Goal_FollowPath.cpp
+         Goal_GetItem.cpp
+         Goal_HuntTarget.cpp
          Goal_MoveToPosition.cpp
          Goal_NegotiateDoor.cpp
+         Goal_SeekToPosition.cpp
+         Goal_Think.cpp
+         Goal_TraverseEdge.cpp
+         Goal_Wander.cpp
+         Raven_Feature.cpp
          main.cpp
          Raven_PathPlanner.cpp
+         Trigger_HealthGiver.cpp
          Generating Code...
          Compiling...
          Trigger_SoundNotify.cpp
+         Trigger_WeaponGiver.cpp
          Generating Code...
        ResourceCompile:
          All outputs are up-to-date.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release/Raven.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Release\Raven.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Release/Raven.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release\Raven.lib" /MACHINE:X86 .\Release\Script1.res
-         .\Release/AttackTargetGoal_Evaluator_Z.obj
-         .\Release/ExploreGoal_Evaluator_Z.obj
-         .\Release/GetHealthGoal_Evaluator_Z.obj
-         .\Release/GetWeaponGoal_Evaluator_Z.obj
-         .\Release/Goal_AttackTarget_Z.obj
-         .\Release/Goal_DodgeSideToSide_Z.obj
-         .\Release/Goal_Explore_Z.obj
-         .\Release/Goal_FollowPath_Z.obj
-         .\Release/Goal_GetItem_Z.obj
-         .\Release/Goal_HuntTarget_Z.obj
-         .\Release/Goal_MoveToPosition_Z.obj
-         .\Release/Goal_NegotiateDoor_Z.obj
-         .\Release/Goal_SeekToPosition_Z.obj
-         .\Release/Goal_Think_Z.obj
-         .\Release/Goal_TraverseEdge_Z.obj
-         .\Release/Goal_Wander_Z.obj
          .\Release/main.obj
-         .\Release/RavenFeature_Z.obj
          .\Release/Raven_Bot.obj
          .\Release/Raven_Bot_Z.obj
          .\Release/Raven_Game.obj
@@ -139,7 +123,7 @@
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Release/Raven.exe;#1" /manifest .\Release\Raven.exe.intermediate.manifest
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\bscmake.exe /nologo /o".\Release/Raven.bsc" .\Release\AttackTargetGoal_Evaluator_Z.sbr .\Release\ExploreGoal_Evaluator_Z.sbr .\Release\GetHealthGoal_Evaluator_Z.sbr .\Release\GetWeaponGoal_Evaluator_Z.sbr .\Release\Goal_AttackTarget_Z.sbr .\Release\Goal_DodgeSideToSide_Z.sbr .\Release\Goal_Explore_Z.sbr .\Release\Goal_FollowPath_Z.sbr .\Release\Goal_GetItem_Z.sbr .\Release\Goal_HuntTarget_Z.sbr .\Release\Goal_MoveToPosition_Z.sbr .\Release\Goal_NegotiateDoor_Z.sbr .\Release\Goal_SeekToPosition_Z.sbr .\Release\Goal_Think_Z.sbr .\Release\Goal_TraverseEdge_Z.sbr .\Release\Goal_Wander_Z.sbr .\Release\main.sbr .\Release\RavenFeature_Z.sbr .\Release\Raven_Bot.sbr .\Release\Raven_Bot_Z.sbr .\Release\Raven_Game.sbr .\Release\Raven_Map.sbr .\Release\Raven_Weapon.sbr .\Release\Weapon_Blaster.sbr .\Release\Weapon_RailGun.sbr .\Release\Weapon_RocketLauncher.sbr .\Release\Weapon_ShotGun.sbr .\Release\Projectile_Bolt.sbr .\Release\Projectile_Pellet.sbr .\Release\Projectile_Rocket.sbr .\Release\Projectile_Slug.sbr .\Release\Raven_Projectile.sbr .\Release\BaseGameEntity.sbr .\Release\Raven_Scriptor.sbr .\Release\EntityManager.sbr .\Release\GraveMarkers.sbr .\Release\Raven_Door.sbr .\Release\Raven_UserOptions.sbr .\Release\Raven_Goal_Types.sbr .\Release\Goal_AdjustRange.sbr .\Release\Goal_AttackTarget.sbr .\Release\Goal_Explore.sbr .\Release\Goal_FollowPath.sbr .\Release\Goal_GetItem.sbr .\Release\Goal_HuntTarget.sbr .\Release\Goal_MoveToPosition.sbr .\Release\Goal_NegotiateDoor.sbr .\Release\Goal_Think.sbr .\Release\AttackTargetGoal_Evaluator.sbr .\Release\ExploreGoal_Evaluator.sbr .\Release\GetHealthGoal_Evaluator.sbr .\Release\GetWeaponGoal_Evaluator.sbr .\Release\Raven_Feature.sbr .\Release\Goal_DodgeSideToSide.sbr .\Release\Goal_SayPhrase.sbr .\Release\Goal_SeekToPosition.sbr .\Release\Goal_TraverseEdge.sbr .\Release\Goal_Wander.sbr .\Release\FuzzyModule.sbr .\Release\FuzzyOperators.sbr .\Release\FuzzyVariable.sbr .\Release\FuzzySet_LeftShoulder.sbr .\Release\FuzzySet_RightShoulder.sbr .\Release\FuzzySet_Singleton.sbr .\Release\FuzzySet_Triangle.sbr .\Release\Raven_PathPlanner.sbr .\Release\Raven_SteeringBehaviors.sbr .\Release\MessageDispatcher.sbr .\Release\Raven_SensoryMemory.sbr .\Release\Trigger_HealthGiver.sbr .\Release\Trigger_SoundNotify.sbr .\Release\Trigger_WeaponGiver.sbr .\Release\Raven_WeaponSystem.sbr .\Release\Raven_TargetingSystem.sbr .\Release\Cgdi.sbr .\Release\CrudeTimer.sbr .\Release\DebugConsole.sbr .\Release\FrameCounter.sbr .\Release\PrecisionTimer.sbr .\Release\Vector2d.sbr .\Release\WindowUtils.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\bscmake.exe /nologo /o".\Release/Raven.bsc" .\Release\main.sbr .\Release\Raven_Bot.sbr .\Release\Raven_Bot_Z.sbr .\Release\Raven_Game.sbr .\Release\Raven_Map.sbr .\Release\Raven_Weapon.sbr .\Release\Weapon_Blaster.sbr .\Release\Weapon_RailGun.sbr .\Release\Weapon_RocketLauncher.sbr .\Release\Weapon_ShotGun.sbr .\Release\Projectile_Bolt.sbr .\Release\Projectile_Pellet.sbr .\Release\Projectile_Rocket.sbr .\Release\Projectile_Slug.sbr .\Release\Raven_Projectile.sbr .\Release\BaseGameEntity.sbr .\Release\Raven_Scriptor.sbr .\Release\EntityManager.sbr .\Release\GraveMarkers.sbr .\Release\Raven_Door.sbr .\Release\Raven_UserOptions.sbr .\Release\Raven_Goal_Types.sbr .\Release\Goal_AdjustRange.sbr .\Release\Goal_AttackTarget.sbr .\Release\Goal_Explore.sbr .\Release\Goal_FollowPath.sbr .\Release\Goal_GetItem.sbr .\Release\Goal_HuntTarget.sbr .\Release\Goal_MoveToPosition.sbr .\Release\Goal_NegotiateDoor.sbr .\Release\Goal_Think.sbr .\Release\AttackTargetGoal_Evaluator.sbr .\Release\ExploreGoal_Evaluator.sbr .\Release\GetHealthGoal_Evaluator.sbr .\Release\GetWeaponGoal_Evaluator.sbr .\Release\Raven_Feature.sbr .\Release\Goal_DodgeSideToSide.sbr .\Release\Goal_SayPhrase.sbr .\Release\Goal_SeekToPosition.sbr .\Release\Goal_TraverseEdge.sbr .\Release\Goal_Wander.sbr .\Release\FuzzyModule.sbr .\Release\FuzzyOperators.sbr .\Release\FuzzyVariable.sbr .\Release\FuzzySet_LeftShoulder.sbr .\Release\FuzzySet_RightShoulder.sbr .\Release\FuzzySet_Singleton.sbr .\Release\FuzzySet_Triangle.sbr .\Release\Raven_PathPlanner.sbr .\Release\Raven_SteeringBehaviors.sbr .\Release\MessageDispatcher.sbr .\Release\Raven_SensoryMemory.sbr .\Release\Trigger_HealthGiver.sbr .\Release\Trigger_SoundNotify.sbr .\Release\Trigger_WeaponGiver.sbr .\Release\Raven_WeaponSystem.sbr .\Release\Raven_TargetingSystem.sbr .\Release\Cgdi.sbr .\Release\CrudeTimer.sbr .\Release\DebugConsole.sbr .\Release\FrameCounter.sbr .\Release\PrecisionTimer.sbr .\Release\Vector2d.sbr .\Release\WindowUtils.sbr
        FinalizeBuildStatus:
          Deleting file ".\Release\Raven.unsuccessfulbuild".
          Touching ".\Release\Raven.lastbuildstate".
@@ -147,4 +131,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:42.87
+Time Elapsed 00:00:55.56

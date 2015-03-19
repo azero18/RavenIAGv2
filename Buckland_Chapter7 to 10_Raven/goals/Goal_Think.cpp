@@ -44,6 +44,10 @@ Goal_Think::Goal_Think(Raven_Bot* pBot):Goal_Composite<Raven_Bot>(pBot, goal_thi
                                                      type_rail_gun));
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(RocketLauncherBias,
                                                      type_rocket_launcher));
+
+  //NEW: Default Flag Z off
+  ZFlag = false;
+
 }
 
 //----------------------------- dtor ------------------------------------------

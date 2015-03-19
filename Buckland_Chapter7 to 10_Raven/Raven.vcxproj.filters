@@ -77,18 +77,6 @@
     <Filter Include="Common">
       <UniqueIdentifier>{f3f5ab42-49d8-4348-aa63-66655abd9be1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\goalsZ">
-      <UniqueIdentifier>{c4839262-fecc-4755-9905-281dc8f5ecb9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AI\goalsZ\atomic">
-      <UniqueIdentifier>{558f90f0-1038-4991-a5b1-2a6c89d3ec7d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AI\goalsZ\composite">
-      <UniqueIdentifier>{871cda16-5570-461e-b5b3-c51830ae39e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AI\goalsZ\goal evaluation">
-      <UniqueIdentifier>{3fd596bf-d775-4f82-bcf2-b00844406484}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -279,57 +267,6 @@
     </ClCompile>
     <ClCompile Include="..\Common\misc\WindowUtils.cpp">
       <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_Think_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_MoveToPosition_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_SeekToPosition_Z.cpp">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_FollowPath_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_TraverseEdge_Z.cpp">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_NegotiateDoor_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_Explore_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_GetItem_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_Wander_Z.cpp">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_AttackTarget_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_HuntTarget_Z.cpp">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal_DodgeSideToSide_Z.cpp">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="GetWeaponGoal_Evaluator_Z.cpp">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClCompile>
-    <ClCompile Include="GetHealthGoal_Evaluator_Z.cpp">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClCompile>
-    <ClCompile Include="ExploreGoal_Evaluator_Z.cpp">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackTargetGoal_Evaluator_Z.cpp">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClCompile>
-    <ClCompile Include="RavenFeature_Z.cpp">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
     </ClCompile>
     <ClCompile Include="Raven_Bot_Z.cpp">
       <Filter>Game</Filter>
@@ -671,66 +608,6 @@
     </ClInclude>
     <ClInclude Include="..\Common\misc\WindowUtils.h">
       <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Z.h">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Think_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Composite_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Evaluator_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_MoveToPosition_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_SeekToPosition_Z.h">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_FollowPath_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_TraverseEdge_Z.h">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_NegotiateDoor_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Explore_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_GetItem_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_Wander_Z.h">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_AttackTarget_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_HuntTarget_Z.h">
-      <Filter>AI\goalsZ\composite</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal_DodgeSideToSide_Z.h">
-      <Filter>AI\goalsZ\atomic</Filter>
-    </ClInclude>
-    <ClInclude Include="GetWeaponGoal_Evaluator_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClInclude>
-    <ClInclude Include="RavenFeature_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClInclude>
-    <ClInclude Include="GetHealthGoal_Evaluator_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClInclude>
-    <ClInclude Include="ExploreGoal_Evaluator_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackTargetGoal_Evaluator_Z.h">
-      <Filter>AI\goalsZ\goal evaluation</Filter>
     </ClInclude>
     <ClInclude Include="Raven_Bot_Z.h">
       <Filter>Game</Filter>

@@ -29,10 +29,16 @@ private:
   
   GoalEvaluators  m_Evaluators;
 
+  //NEW: Flag de modificado
+  //bool ZFlag;
+
 public:
 
   Goal_Think(Raven_Bot* pBot);
   ~Goal_Think();
+
+  //NEW:
+  void setZ_On(){ZFlag = true;};
 
   //this method iterates through each goal evaluator and selects the one
   //that has the highest score as the current goal
