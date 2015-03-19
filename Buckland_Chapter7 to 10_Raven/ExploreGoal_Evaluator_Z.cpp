@@ -26,7 +26,7 @@ double ExploreGoal_Evaluator_Z::CalculateDesirability(Raven_Bot_Z* pBot)
 //-----------------------------------------------------------------------------
 void ExploreGoal_Evaluator_Z::SetGoal(Raven_Bot_Z* pBot)
 {
-  pBot->GetBrain_Z()->AddGoal_Explore();
+  pBot->GetBrain()->AddGoal_Explore();
 }
 
 //-------------------------- RenderInfo ---------------------------------------

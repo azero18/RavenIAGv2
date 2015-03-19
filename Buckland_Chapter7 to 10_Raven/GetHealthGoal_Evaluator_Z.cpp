@@ -47,7 +47,7 @@ double GetHealthGoal_Evaluator_Z::CalculateDesirability(Raven_Bot_Z* pBot)
 //-----------------------------------------------------------------------------
 void GetHealthGoal_Evaluator_Z::SetGoal(Raven_Bot_Z* pBot)
 {
-  pBot->GetBrain_Z()->AddGoal_GetItem(type_health); 
+  pBot->GetBrain()->AddGoal_GetItem(type_health); 
 }
 
 //-------------------------- RenderInfo ---------------------------------------

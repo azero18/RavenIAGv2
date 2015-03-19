@@ -39,7 +39,7 @@ double AttackTargetGoal_Evaluator_Z::CalculateDesirability(Raven_Bot_Z* pBot)
 //-----------------------------------------------------------------------------
 void AttackTargetGoal_Evaluator_Z::SetGoal(Raven_Bot_Z* pBot)
 {
-  pBot->GetBrain_Z()->AddGoal_AttackTarget(); 
+  pBot->GetBrain()->AddGoal_AttackTarget(); 
 }
 
 //-------------------------- RenderInfo ---------------------------------------

@@ -22,7 +22,7 @@ public:
 	void Render();
 
 	//ajeitar para ter variavel que guarda um goal_think_z
-	Goal_Think_Z* const                  GetBrain_Z(){return m_pBrain;}
+	Goal_Think_Z* const                  GetBrain(){return m_pBrain;}
 };
 
 #endif

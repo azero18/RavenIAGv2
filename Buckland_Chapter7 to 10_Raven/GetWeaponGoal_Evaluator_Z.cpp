@@ -55,7 +55,7 @@ double GetWeaponGoal_Evaluator_Z::CalculateDesirability(Raven_Bot_Z* pBot)
 void GetWeaponGoal_Evaluator_Z::SetGoal(Raven_Bot_Z* pBot)
 {
 	//ajeitar no raven-bot-z
-  pBot->GetBrain_Z()->AddGoal_GetItem(m_iWeaponType); 
+  pBot->GetBrain()->AddGoal_GetItem(m_iWeaponType); 
 }
 
 //-------------------------- RenderInfo ---------------------------------------
