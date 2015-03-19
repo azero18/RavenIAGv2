@@ -17,6 +17,8 @@
 #include "misc/utils.h"
 #include "Raven_TargetingSystem.h"
 #include "time/crudetimer.h"
+#include "lua/Raven_Scriptor.h"
+#include "constants.h"
 
 
 class Raven_PathPlanner;
@@ -140,7 +142,7 @@ public:
   virtual ~Raven_Bot();
 
   //the usual suspects
-  void         Render();
+  virtual void         Render() = 0;
   void         Update();
   bool         HandleMessage(const Telegram& msg);
   void         Write(std::ostream&  os)const{/*not implemented*/}
@@ -240,8 +242,5 @@ public:
 
 
 };
-
-
-
 
 #endif

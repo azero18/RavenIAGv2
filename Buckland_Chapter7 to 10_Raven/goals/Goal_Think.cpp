@@ -9,7 +9,7 @@
 #include "Goal_Explore.h"
 #include "Goal_GetItem.h"
 #include "Goal_Wander.h"
-#include "Raven_Goal_Types.h"
+//#include "Raven_Goal_Types.h"
 #include "Goal_AttackTarget.h"
 
 
@@ -19,7 +19,7 @@
 #include "AttackTargetGoal_Evaluator.h"
 
 
-Goal_Think::Goal_Think(Raven_Bot* pBot):Goal_Composite<Raven_Bot>(pBot, goal_think)
+Goal_Think::Goal_Think(Raven_Bot* pBot, int goal_think_type):Goal_Composite<Raven_Bot>(pBot, goal_think_type) //NEW: vide construtor no .h
 {
   
   //these biases could be loaded in from a script on a per bot basis

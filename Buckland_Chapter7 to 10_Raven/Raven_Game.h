@@ -23,7 +23,7 @@
 #include "2d/Wall2D.h"
 #include "misc/utils.h"
 #include "game/EntityFunctionTemplates.h"
-#include "Raven_Bot.h"
+#include "Raven_Bot_X.h" //NEW: originalmente era #include "Raven_Bot.h"
 #include "Raven_Bot_Z.h"
 #include "navigation/pathmanager.h"
 

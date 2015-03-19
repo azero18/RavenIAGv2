@@ -17,22 +17,21 @@
 #include "../Raven_Bot.h"
 #include "Goal_Evaluator.h"
 
+#include "Raven_Goal_Types.h" //NEW: originalmente isso fica em Goal_Think.cpp
 
 
 class Goal_Think : public Goal_Composite<Raven_Bot>
 {
-private:
+protected:
   
   typedef std::vector<Goal_Evaluator*>   GoalEvaluators;
-
-private:
   
   GoalEvaluators  m_Evaluators;
 
 public:
 
-  Goal_Think(Raven_Bot* pBot);
-  ~Goal_Think();
+  Goal_Think(Raven_Bot* pBot, int goal_think_type); //NEW: mudando construtor basico, podendo escolher o tipo de goal agora
+  virtual ~Goal_Think();
 
   //this method iterates through each goal evaluator and selects the one
   //that has the highest score as the current goal
@@ -58,7 +57,6 @@ public:
   //this renders the evaluations (goal scores) at the specified location
   void  RenderEvaluations(int left, int top)const;
   void  Render();
-
 
 };
 

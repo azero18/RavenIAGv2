@@ -83,6 +83,10 @@ std::string GoalTypeToString::Convert(int gt)
 
     return "say_phrase";
 
+  case goal_think_Z: //NEW: para reconhecer o goal_think type
+
+	return "think_Z";
+  
   default:
 
     return "UNKNOWN GOAL TYPE!";

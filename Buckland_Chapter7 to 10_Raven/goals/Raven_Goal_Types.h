@@ -23,7 +23,8 @@ enum
   goal_hunt_target,
   goal_strafe,
   goal_adjust_range,
-  goal_say_phrase
+  goal_say_phrase,
+  goal_think_Z //NEW: goal para Raven_Bot_Z
   
 };
 

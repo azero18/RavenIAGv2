@@ -253,7 +253,7 @@ void Raven_Game::AddBots(unsigned int NumBotsToAdd, unsigned int Type)
 	  {
 		//create a bot. (its position is irrelevant at this point because it will
 		//not be rendered until it is spawned)
-		Raven_Bot* rb = new Raven_Bot(this, Vector2D());
+		Raven_Bot* rb = new Raven_Bot_X(this, Vector2D()); //NEW adiciona Raven_Bot_X (original era Raven_Bot)
 
 		//switch the default steering behaviors on
 		rb->GetSteering()->WallAvoidanceOn();

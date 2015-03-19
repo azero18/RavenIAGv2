@@ -214,28 +214,15 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AttackTargetGoal_Evaluator_Z.cpp" />
-    <ClCompile Include="ExploreGoal_Evaluator_Z.cpp" />
-    <ClCompile Include="GetHealthGoal_Evaluator_Z.cpp" />
-    <ClCompile Include="GetWeaponGoal_Evaluator_Z.cpp" />
-    <ClCompile Include="Goal_AttackTarget_Z.cpp" />
-    <ClCompile Include="Goal_DodgeSideToSide_Z.cpp" />
-    <ClCompile Include="Goal_Explore_Z.cpp" />
-    <ClCompile Include="Goal_FollowPath_Z.cpp" />
-    <ClCompile Include="Goal_GetItem_Z.cpp" />
-    <ClCompile Include="Goal_HuntTarget_Z.cpp" />
-    <ClCompile Include="Goal_MoveToPosition_Z.cpp" />
-    <ClCompile Include="Goal_NegotiateDoor_Z.cpp" />
-    <ClCompile Include="Goal_SeekToPosition_Z.cpp" />
+    <ClCompile Include="Goal_Think_X.cpp" />
     <ClCompile Include="Goal_Think_Z.cpp" />
-    <ClCompile Include="Goal_TraverseEdge_Z.cpp" />
-    <ClCompile Include="Goal_Wander_Z.cpp" />
     <ClCompile Include="main.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Raven_Bot.cpp">
+    <ClCompile Include="Raven_Bot.cpp" />
+    <ClCompile Include="Raven_Bot_X.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -246,7 +233,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="Raven_Goal_Types_Z.cpp" />
     <ClCompile Include="Raven_Map.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -549,30 +535,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AttackTargetGoal_Evaluator_Z.h" />
-    <ClInclude Include="ExploreGoal_Evaluator_Z.h" />
-    <ClInclude Include="GetHealthGoal_Evaluator_Z.h" />
-    <ClInclude Include="GetWeaponGoal_Evaluator_Z.h" />
-    <ClInclude Include="Goal_AttackTarget_Z.h" />
-    <ClInclude Include="Goal_Composite_Z.h" />
-    <ClInclude Include="Goal_DodgeSideToSide_Z.h" />
-    <ClInclude Include="Goal_Evaluator_Z.h" />
-    <ClInclude Include="Goal_Explore_Z.h" />
-    <ClInclude Include="Goal_FollowPath_Z.h" />
-    <ClInclude Include="Goal_GetItem_Z.h" />
-    <ClInclude Include="Goal_HuntTarget_Z.h" />
-    <ClInclude Include="Goal_MoveToPosition_Z.h" />
-    <ClInclude Include="Goal_NegotiateDoor_Z.h" />
-    <ClInclude Include="Goal_SeekToPosition_Z.h" />
+    <ClInclude Include="Goal_Think_X.h" />
     <ClInclude Include="Goal_Think_Z.h" />
-    <ClInclude Include="Goal_TraverseEdge_Z.h" />
-    <ClInclude Include="Goal_Wander_Z.h" />
-    <ClInclude Include="Goal_Z.h" />
-    <ClInclude Include="RavenFeature_Z.h" />
     <ClInclude Include="Raven_Bot.h" />
+    <ClInclude Include="Raven_Bot_X.h" />
     <ClInclude Include="Raven_Bot_Z.h" />
     <ClInclude Include="Raven_Game.h" />
-    <ClInclude Include="Raven_Goal_Types_Z.h" />
     <ClInclude Include="Raven_Map.h" />
     <ClInclude Include="armory\Raven_Weapon.h" />
     <ClInclude Include="armory\Weapon_Blaster.h" />
