@@ -46,13 +46,17 @@ public:
   //set to true if there is no obstruction between the opponent and the owner, 
   //permitting a shot.
   bool        bShootable;
-  
+
+  //NEW
+  int		  estimedDMG;
+  void        setDMG(int val){estimedDMG=val;};
 
   MemoryRecord():fTimeLastSensed(-999),
             fTimeBecameVisible(-999),
             fTimeLastVisible(0),
             bWithinFOV(false),
-            bShootable(false)
+            bShootable(false),
+			estimedDMG(0)
   {}
 };
 
@@ -74,10 +78,7 @@ private:
   //whenever the opponent is encountered. (when it is seen or heard)
   MemoryMap  m_MemoryMap;
 
-  //a bot has a memory span equivalent to this value. When a bot requests a 
-  //list of all recently sensed opponents this value is used to determine if 
-  //the bot is able to remember an opponent or not.
-  double      m_dMemorySpan;
+
 
   //this methods checks to see if there is an existing record for pBot. If
   //not a new MemoryRecord record is made and added to the memory map.(called
@@ -85,6 +86,11 @@ private:
   void       MakeNewRecordIfNotAlreadyPresent(Raven_Bot* pBot);
 
 public:
+
+  //a bot has a memory span equivalent to this value. When a bot requests a 
+  //list of all recently sensed opponents this value is used to determine if 
+  //the bot is able to remember an opponent or not.
+  double      m_dMemorySpan;
 
   Raven_SensoryMemory(Raven_Bot* owner, double MemorySpan);
 
@@ -111,6 +117,9 @@ public:
   std::list<Raven_Bot*> GetListOfRecentlySensedOpponents()const;
 
   void     RenderBoxesAroundRecentlySensed()const;
+
+  int getEDMG(Raven_Bot* bot);
+  void setEDMG(Raven_Bot* bot,int val);
 
 };
 

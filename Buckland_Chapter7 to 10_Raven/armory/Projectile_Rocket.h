@@ -34,6 +34,8 @@ private:
 
 public:
 
+  Raven_Bot* pshooter;
+
   Rocket(Raven_Bot* shooter, Vector2D target);
   
   void Render();

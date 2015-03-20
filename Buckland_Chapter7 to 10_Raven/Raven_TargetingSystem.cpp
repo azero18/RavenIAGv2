@@ -1,7 +1,9 @@
 #include "Raven_TargetingSystem.h"
 #include "Raven_Bot.h"
 #include "Raven_SensoryMemory.h"
-
+#include "goals/Goal_Think.h"
+#include "goals/Raven_Goal_Types.h"
+#include "goals/Raven_Feature.h"
 
 
 //-------------------------------- ctor ---------------------------------------
@@ -23,21 +25,67 @@ void Raven_TargetingSystem::Update()
   //grab a list of all the opponents the owner can sense
   std::list<Raven_Bot*> SensedBots;
   SensedBots = m_pOwner->GetSensoryMem()->GetListOfRecentlySensedOpponents();
-  
-  std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
-  for (curBot; curBot != SensedBots.end(); ++curBot)
-  {
-    //make sure the bot is alive and that it is not the owner
-    if ((*curBot)->isAlive() && (*curBot != m_pOwner) )
-    {
-      double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
+  //NEW
+  int think_type = m_pOwner->GetBrain()->GetType();
 
-      if (dist < ClosestDistSoFar)
-      {
-        ClosestDistSoFar = dist;
-        m_pCurrentTarget = *curBot;
-      }
-    }
+  if (think_type == goal_think)
+  {
+	  std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
+	  for (curBot; curBot != SensedBots.end(); ++curBot)
+	  {
+		//make sure the bot is alive and that it is not the owner
+		if ((*curBot)->isAlive() && (*curBot != m_pOwner) )
+		{
+		  double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
+
+		  if (dist < ClosestDistSoFar)
+		  {
+			ClosestDistSoFar = dist;
+			m_pCurrentTarget = *curBot;
+		  }
+		}
+	  }
+  }
+  //NEW: aplicar heuristica do dano estimado
+  if (think_type == goal_think_Z)
+  {
+	  //ClosestDistSoFar = 0;
+
+	  double RailgunStrenght = Raven_Feature::IndividualWeaponStrength(m_pOwner,type_rail_gun);
+	  double ShotgunStrenght = Raven_Feature::IndividualWeaponStrength(m_pOwner,type_shotgun);
+	  double RocketStrenght = Raven_Feature::IndividualWeaponStrength(m_pOwner, type_rocket_launcher);
+	  
+	  double distMod;
+		  if ((RailgunStrenght > ShotgunStrenght)||(RocketStrenght > ShotgunStrenght))
+		  {
+			distMod = ((RailgunStrenght+RocketStrenght)/2)+ShotgunStrenght;
+		  }else
+		  {
+		    distMod = ShotgunStrenght;
+		  }
+
+	  std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
+	  for (curBot; curBot != SensedBots.end(); ++curBot)
+	  {
+		//make sure the bot is alive and that it is not the owner
+		if ((*curBot)->isAlive() && (*curBot != m_pOwner) )
+		{	  
+
+		  double dist = Vec2DDistance((*curBot)->Pos(), m_pOwner->Pos());
+
+		  double tdist = dist*distMod;
+
+		  int estimedHealth = (100 - m_pOwner->GetSensoryMem()->getEDMG(*curBot))/100;
+
+		  double calculus = tdist / estimedHealth;
+
+		  if (calculus < ClosestDistSoFar)
+		  {
+			ClosestDistSoFar = calculus;
+			m_pCurrentTarget = *curBot;
+		  }
+		}
+	  }
   }
 }
 

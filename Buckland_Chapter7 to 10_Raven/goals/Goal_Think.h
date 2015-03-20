@@ -17,6 +17,12 @@
 #include "../Raven_Bot.h"
 #include "Goal_Evaluator.h"
 
+#include "GetWeaponGoal_Evaluator.h"
+#include "GetHealthGoal_Evaluator.h"
+#include "ExploreGoal_Evaluator.h"
+#include "AttackTargetGoal_Evaluator.h"
+#include "../Raven_ObjectEnumerations.h"
+
 #include "Raven_Goal_Types.h" //NEW: originalmente isso fica em Goal_Think.cpp
 
 
@@ -35,21 +41,22 @@ public:
 
   //this method iterates through each goal evaluator and selects the one
   //that has the highest score as the current goal
-  void Arbitrate();
+  virtual void Arbitrate() = 0;
 
   //returns true if the given goal is not at the front of the subgoal list
   bool notPresent(unsigned int GoalType)const;
 
   //the usual suspects
-  int  Process();
+  virtual int  Process() = 0;
   void Activate();
   void Terminate(){}
   
   //top level goal types
-  void AddGoal_MoveToPosition(Vector2D pos);
-  void AddGoal_GetItem(unsigned int ItemType);
+  virtual void AddGoal_MoveToPosition(Vector2D pos) = 0;
+  virtual void AddGoal_GetItem(unsigned int ItemType) = 0;
   void AddGoal_Explore();
   void AddGoal_AttackTarget();
+
 
   //this adds the MoveToPosition goal to the *back* of the subgoal list.
   void QueueGoal_MoveToPosition(Vector2D pos);

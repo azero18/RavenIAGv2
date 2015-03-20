@@ -3,7 +3,7 @@
 #include "time/crudetimer.h"
 #include "misc/cgdi.h"
 #include "misc/Stream_Utility_Functions.h"
-
+#include "../Common/Debug/DebugConsole.h"
 //------------------------------- ctor ----------------------------------------
 //-----------------------------------------------------------------------------
  Raven_SensoryMemory:: Raven_SensoryMemory(Raven_Bot* owner,
@@ -123,6 +123,9 @@ void Raven_SensoryMemory::UpdateVision()
         {
           info.bWithinFOV = false;         
         }
+
+		double SpanVal = Clock->GetCurrentTime()- info.fTimeLastVisible;
+		if (SpanVal > (m_dMemorySpan/2)){ info.setDMG(0); }
       }
 
       else
@@ -131,6 +134,8 @@ void Raven_SensoryMemory::UpdateVision()
         info.bWithinFOV = false;
       }
     }
+	
+
   }//next bot
 }
 
@@ -258,14 +263,64 @@ double  Raven_SensoryMemory::GetTimeSinceLastSensed(Raven_Bot* pOpponent)const
   return 0;
 }
 
+
+//NEW
+
+int Raven_SensoryMemory::getEDMG(Raven_Bot* bot)
+{
+	MemoryMap::const_iterator it = m_MemoryMap.find(bot);
+	if (it != m_MemoryMap.end())
+	{
+		return it->second.estimedDMG;
+	}else
+		return 0;
+}
+
+void Raven_SensoryMemory::setEDMG(Raven_Bot* bot, int val)
+{
+	MemoryRecord& info = m_MemoryMap[bot];
+	if (val > 99){ val = 99;}
+	if (val < 1){ if (!bot->isDead()){val = 1;}else{val = 0;}}
+	
+	info.setDMG(val);
+	//debug_con << bot->ID() << " got " << info.estimedDMG <<" estdmg to "<< m_pOwner->ID() <<" \n";
+}
+
+
 //---------------------- RenderBoxesAroundRecentlySensed ----------------------
 //
 //  renders boxes around the opponents it has sensed recently.
 //-----------------------------------------------------------------------------
 void  Raven_SensoryMemory::RenderBoxesAroundRecentlySensed()const
 {
-  std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents();
-  std::list<Raven_Bot*>::const_iterator it;
+  //std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents(); 
+  //std::list<Raven_Bot*> opponents;  
+
+  double CurrentTime = Clock->GetCurrentTime();
+
+  MemoryMap::const_iterator curRecord = m_MemoryMap.begin();
+  for (curRecord; curRecord!=m_MemoryMap.end(); ++curRecord)
+  {
+    //if this bot has been updated in the memory recently, add to list
+    if ( (CurrentTime - curRecord->second.fTimeLastSensed) <= m_dMemorySpan)
+    {
+	  //(curRecord->second.estimedDMG)
+      //opponents.push_back(curRecord->first); 
+
+		gdi->OrangePen();
+		Vector2D p = (curRecord->first)->Pos();
+		double   b = (curRecord->first)->BRadius();
+      
+		gdi->Line(p.x-b, p.y-b, p.x+b, p.y-b);
+		gdi->Line(p.x+b, p.y-b, p.x+b, p.y+b);
+		gdi->Line(p.x+b, p.y+b, p.x-b, p.y+b);
+		gdi->Line(p.x-b, p.y+b, p.x-b, p.y-b);
+
+		gdi->TextColor(100,0,100);
+		gdi->TextAtPos(p, "HE:"+ttos((curRecord->second.estimedDMG)));
+    }
+  }
+ /* std::list<Raven_Bot*>::const_iterator it;
   for (it = opponents.begin(); it != opponents.end(); ++it)
   {
     gdi->OrangePen();
@@ -276,6 +331,7 @@ void  Raven_SensoryMemory::RenderBoxesAroundRecentlySensed()const
     gdi->Line(p.x+b, p.y-b, p.x+b, p.y+b);
     gdi->Line(p.x+b, p.y+b, p.x-b, p.y+b);
     gdi->Line(p.x-b, p.y+b, p.x-b, p.y-b);
-  }
+		
+  }*/
 
 }

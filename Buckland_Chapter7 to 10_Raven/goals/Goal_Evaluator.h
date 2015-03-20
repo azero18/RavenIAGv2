@@ -38,6 +38,8 @@ public:
 
   //used to provide debugging/tweaking support
   virtual void  RenderInfo(Vector2D Position, Raven_Bot* pBot) = 0;
+
+  virtual int  getTypeNum() = 0;
 };
 
 

@@ -66,6 +66,7 @@ public:
   virtual void RenderAtPos(Vector2D& pos, TypeToString* tts)const;
   //this is only used to render information for debugging purposes
   virtual void Render();
+
 };
 
 

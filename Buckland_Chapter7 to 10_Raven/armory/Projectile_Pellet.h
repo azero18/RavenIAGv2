@@ -32,6 +32,8 @@ private:
   
 public:
 
+  Raven_Bot* pshooter;
+
   Pellet(Raven_Bot* shooter, Vector2D target);
   
   void Render();

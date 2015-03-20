@@ -5,7 +5,9 @@
 #include "../lua/Raven_Scriptor.h"
 #include "../constants.h"
 #include "../Raven_ObjectEnumerations.h"
-
+#include "../Raven_SensoryMemory.h"
+#include "../../Common/Debug/DebugConsole.h"
+#include "../Raven_Game.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 Trigger_HealthGiver::Trigger_HealthGiver(std::ifstream& datafile):
@@ -21,7 +23,26 @@ void Trigger_HealthGiver::Try(Raven_Bot* pBot)
   if (isActive() && isTouchingTrigger(pBot->Pos(), pBot->BRadius()))
   {
     pBot->IncreaseHealth(m_iHealthGiven);
+	//debug_con << pBot->ID() << " got health "<< " \n";
 
+
+	std::list<Raven_Bot*> opponents = pBot->GetWorld()->GetAllBots();
+	std::list<Raven_Bot*>::const_iterator curBot = opponents.begin();
+    for (curBot; curBot != opponents.end(); ++curBot)
+    {
+    //make sure the bot is alive and that it is not the owner  
+	
+	  if ((*curBot)->isAlive() && (*curBot != pBot))
+	  {
+		  bool isVisible = (*curBot)->GetSensoryMem()->isOpponentWithinFOV(pBot);
+		  if (isVisible)
+		  {
+			  int actualhealth = pBot->GetSensoryMem()->getEDMG(*curBot);
+			  //debug_con << (*curBot)->ID() << " got informed: "<< actualhealth-m_iHealthGiven<< " estimated health to "<< pBot->ID() << " \n";
+			  (*curBot)->GetSensoryMem()->setEDMG(pBot,actualhealth-m_iHealthGiven);
+		  }
+	  }
+	}
     Deactivate();
   } 
 }

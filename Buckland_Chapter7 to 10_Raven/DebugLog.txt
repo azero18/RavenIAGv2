@@ -74,36 +74,36 @@ Creating a shotgun
 Creating a rocket_launcher
 Creating a Spawn Point
 maps/Raven_DM1_4spawn.map loaded okay
-Player is exorcised from bot 404
+BOT 403 IS STUCK!!
 
 this is a bot.
        STATISTICS
- - Kills = 0
- - Deaths = 0
- - Time has survived = 36.201s ( 36.201s/lives )
+ - Kills = 10
+ - Deaths = 5
+ - Time has survived = 394.408s ( 65.7347s/lives )
 
 deleting raven bot (id = 401)
 
 this is a bot.
        STATISTICS
- - Kills = 0
- - Deaths = 1
- - Time has survived = 36.188s ( 18.094s/lives )
+ - Kills = 12
+ - Deaths = 5
+ - Time has survived = 394.407s ( 65.7345s/lives )
 
 deleting raven bot (id = 402)
 
 this is a bot Z.
        STATISTICS
- - Kills = 1
- - Deaths = 0
- - Time has survived = 36.208s ( 36.208s/lives )
+ - Kills = 3
+ - Deaths = 4
+ - Time has survived = 394.426s ( 78.8852s/lives )
 
 deleting raven bot (id = 403)
 
 this is a bot Z.
        STATISTICS
  - Kills = 1
- - Deaths = 1
- - Time has survived = 36.196s ( 18.098s/lives )
+ - Deaths = 12
+ - Time has survived = 394.202s ( 30.3232s/lives )
 
 deleting raven bot (id = 404)

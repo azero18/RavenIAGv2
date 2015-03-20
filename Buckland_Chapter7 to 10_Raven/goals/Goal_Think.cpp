@@ -1,7 +1,7 @@
 #include "Goal_Think.h"
 #include <list>
 #include "misc/Cgdi.h"
-#include "../Raven_ObjectEnumerations.h"
+//#include "../Raven_ObjectEnumerations.h"
 #include "misc/utils.h"
 #include "../lua/Raven_Scriptor.h"
 
@@ -13,18 +13,12 @@
 #include "Goal_AttackTarget.h"
 
 
-#include "GetWeaponGoal_Evaluator.h"
-#include "GetHealthGoal_Evaluator.h"
-#include "ExploreGoal_Evaluator.h"
-#include "AttackTargetGoal_Evaluator.h"
-
-
 Goal_Think::Goal_Think(Raven_Bot* pBot, int goal_think_type):Goal_Composite<Raven_Bot>(pBot, goal_think_type) //NEW: vide construtor no .h
 {
   
   //these biases could be loaded in from a script on a per bot basis
   //but for now we'll just give them some random values
-  const double LowRangeOfBias = 0.5;
+  /*const double LowRangeOfBias = 0.5;
   const double HighRangeOfBias = 1.5;
 
   double HealthBias = RandInRange(LowRangeOfBias, HighRangeOfBias);
@@ -43,7 +37,7 @@ Goal_Think::Goal_Think(Raven_Bot* pBot, int goal_think_type):Goal_Composite<Rave
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(RailgunBias,
                                                      type_rail_gun));
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(RocketLauncherBias,
-                                                     type_rocket_launcher));
+                                                     type_rocket_launcher));*/
 }
 
 //----------------------------- dtor ------------------------------------------
@@ -73,50 +67,51 @@ void Goal_Think::Activate()
 //
 //  processes the subgoals
 //-----------------------------------------------------------------------------
-int Goal_Think::Process()
-{
-  ActivateIfInactive();
-  
-  int SubgoalStatus = ProcessSubgoals();
-
-  if (SubgoalStatus == completed || SubgoalStatus == failed)
-  {
-    if (!m_pOwner->isPossessed())
-    {
-      m_iStatus = inactive;
-    }
-  }
-
-  return m_iStatus;
-}
+//int Goal_Think::Process()
+//{
+//  ActivateIfInactive();
+//  
+//  int SubgoalStatus = ProcessSubgoals();
+//
+//  if (SubgoalStatus == completed || SubgoalStatus == failed)
+//  {
+//    if (!m_pOwner->isPossessed())
+//    {
+//      m_iStatus = inactive;
+//    }
+//  }
+//
+//  return m_iStatus;
+//}
 
 //----------------------------- Update ----------------------------------------
 // 
 //  this method iterates through each goal option to determine which one has
 //  the highest desirability.
 //-----------------------------------------------------------------------------
-void Goal_Think::Arbitrate()
-{
-  double best = 0;
-  Goal_Evaluator* MostDesirable = 0;
-
-  //iterate through all the evaluators to see which produces the highest score
-  GoalEvaluators::iterator curDes = m_Evaluators.begin();
-  for (curDes; curDes != m_Evaluators.end(); ++curDes)
-  {
-    double desirabilty = (*curDes)->CalculateDesirability(m_pOwner);
-
-    if (desirabilty >= best)
-    {
-      best = desirabilty;
-      MostDesirable = *curDes;
-    }
-  }
-
-  assert(MostDesirable && "<Goal_Think::Arbitrate>: no evaluator selected");
-
-  MostDesirable->SetGoal(m_pOwner);
-}
+//void Goal_Think::Arbitrate()
+//{
+//  double best = 0;
+//  Goal_Evaluator* MostDesirable = 0;
+//
+//  //iterate through all the evaluators to see which produces the highest score
+//  GoalEvaluators::iterator curDes = m_Evaluators.begin();
+//  for (curDes; curDes != m_Evaluators.end(); ++curDes)
+//  {
+//    double desirabilty = (*curDes)->CalculateDesirability(m_pOwner);
+//	if ((*curDes)->getTypeNum() == 3){desirabilty *= GetitemEvalMod();}
+//    if (desirabilty >= best)
+//    {
+//      best = desirabilty;
+//      MostDesirable = *curDes;
+//    }
+//  }
+//
+//  assert(MostDesirable && "<Goal_Think::Arbitrate>: no evaluator selected");
+//  
+//  if (MostDesirable->getTypeNum() == 3){ResetItemEvalMod();}
+//  MostDesirable->SetGoal(m_pOwner);
+//}
 
 
 //---------------------------- notPresent --------------------------------------
@@ -134,10 +129,10 @@ bool Goal_Think::notPresent(unsigned int GoalType)const
   return true;
 }
 
-void Goal_Think::AddGoal_MoveToPosition(Vector2D pos)
-{
-  AddSubgoal( new Goal_MoveToPosition(m_pOwner, pos));
-}
+//void Goal_Think::AddGoal_MoveToPosition(Vector2D pos)
+//{
+  //AddSubgoal( new Goal_MoveToPosition(m_pOwner, pos));
+//}
 
 void Goal_Think::AddGoal_Explore()
 {
@@ -148,14 +143,14 @@ void Goal_Think::AddGoal_Explore()
   }
 }
 
-void Goal_Think::AddGoal_GetItem(unsigned int ItemType)
-{
-  if (notPresent(ItemTypeToGoalType(ItemType)))
-  {
-    RemoveAllSubgoals();
-    AddSubgoal( new Goal_GetItem(m_pOwner, ItemType));
-  }
-}
+//void Goal_Think::AddGoal_GetItem(unsigned int ItemType)
+//{
+//  if (notPresent(ItemTypeToGoalType(ItemType)))
+//  {
+//    RemoveAllSubgoals();
+//    AddSubgoal( new Goal_GetItem(m_pOwner, ItemType));
+//  }
+//}
 
 void Goal_Think::AddGoal_AttackTarget()
 {
@@ -196,7 +191,7 @@ void Goal_Think::Render()
   for (curG=m_SubGoals.begin(); curG != m_SubGoals.end(); ++curG)
   {
     (*curG)->Render();
-  }
+  }  
 }
 
 

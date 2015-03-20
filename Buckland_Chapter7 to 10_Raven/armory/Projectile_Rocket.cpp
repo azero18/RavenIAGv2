@@ -9,7 +9,7 @@
 
 #include "../Raven_Messages.h"
 #include "Messaging/MessageDispatcher.h"
-
+#include "../Raven_SensoryMemory.h"
 
 //-------------------------- ctor ---------------------------------------------
 //-----------------------------------------------------------------------------
@@ -30,6 +30,7 @@ Rocket::Rocket(Raven_Bot* shooter, Vector2D target):
        m_dBlastRadius(script->GetDouble("Rocket_BlastRadius"))
 {
    assert (target != Vector2D());
+   pshooter = shooter;
 }
 
 
@@ -87,7 +88,8 @@ void Rocket::TestForImpact()
                               hit->ID(),
                               Msg_TakeThatMF,
                               (void*)&m_iDamageInflicted);
-
+	  int v = pshooter->GetSensoryMem()->getEDMG(hit);
+	  pshooter->GetSensoryMem()->setEDMG(hit,v+m_iDamageInflicted);
       //test for bots within the blast radius and inflict damage
       InflictDamageOnBotsWithinBlastRadius();
     }
@@ -141,7 +143,8 @@ void Rocket::InflictDamageOnBotsWithinBlastRadius()
                               (*curBot)->ID(),
                               Msg_TakeThatMF,
                               (void*)&m_iDamageInflicted);
-      
+      int v = pshooter->GetSensoryMem()->getEDMG(*curBot);
+	  pshooter->GetSensoryMem()->setEDMG(*curBot,v+m_iDamageInflicted);
     }
   }  
 }

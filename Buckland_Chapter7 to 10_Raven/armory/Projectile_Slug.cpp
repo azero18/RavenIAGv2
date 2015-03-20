@@ -9,6 +9,7 @@
 
 #include "../Raven_Messages.h"
 #include "Messaging/MessageDispatcher.h"
+#include "../Raven_SensoryMemory.h"
 
 #include <list>
 
@@ -30,7 +31,7 @@ Slug::Slug(Raven_Bot* shooter, Vector2D target):
 
         m_dTimeShotIsVisible(script->GetDouble("Slug_Persistance"))
 {
-  
+  pshooter = shooter;
 }
 
 //------------------------------ Update ---------------------------------------
@@ -98,6 +99,8 @@ void Slug::TestForImpact()
                             (*it)->ID(),
                             Msg_TakeThatMF,
                             (void*)&m_iDamageInflicted);
+	int v = pshooter->GetSensoryMem()->getEDMG(*it);
+	pshooter->GetSensoryMem()->setEDMG(*it,v+m_iDamageInflicted);
     
   }
 }

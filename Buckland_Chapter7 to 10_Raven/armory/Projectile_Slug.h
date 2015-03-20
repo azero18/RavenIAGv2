@@ -31,6 +31,8 @@ private:
   
 public:
 
+  Raven_Bot* pshooter;
+
   Slug(Raven_Bot* shooter, Vector2D target);
   
   void Render();

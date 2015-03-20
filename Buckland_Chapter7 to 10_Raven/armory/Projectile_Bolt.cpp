@@ -10,6 +10,7 @@
 #include "../Raven_Messages.h"
 #include "Messaging/MessageDispatcher.h"
 
+#include "../Raven_SensoryMemory.h"
 
 //-------------------------- ctor ---------------------------------------------
 //-----------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Bolt::Bolt(Raven_Bot* shooter, Vector2D target):
                          script->GetDouble("Bolt_MaxForce"))
 {
    assert (target != Vector2D());
+   pshooter = shooter;
 }
 
 
@@ -68,6 +70,8 @@ void Bolt::Update()
                               hit->ID(),
                               Msg_TakeThatMF,
                               (void*)&m_iDamageInflicted);
+	  int v = pshooter->GetSensoryMem()->getEDMG(hit);
+	  pshooter->GetSensoryMem()->setEDMG(hit,v+m_iDamageInflicted);
     }
 
     //test for impact with a wall

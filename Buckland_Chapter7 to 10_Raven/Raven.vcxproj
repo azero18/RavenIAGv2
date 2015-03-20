@@ -214,6 +214,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Goal_FollowPath_Z.cpp" />
+    <ClCompile Include="Goal_GetItem_Z.cpp" />
+    <ClCompile Include="Goal_MoveToPosition_Z.cpp" />
     <ClCompile Include="Goal_Think_X.cpp" />
     <ClCompile Include="Goal_Think_Z.cpp" />
     <ClCompile Include="main.cpp">
@@ -535,6 +538,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Goal_FollowPath_Z.h" />
+    <ClInclude Include="Goal_GetItem_Z.h" />
+    <ClInclude Include="Goal_MoveToPosition_Z.h" />
     <ClInclude Include="Goal_Think_X.h" />
     <ClInclude Include="Goal_Think_Z.h" />
     <ClInclude Include="Raven_Bot.h" />

@@ -11,7 +11,7 @@
 
 #include "../Raven_Messages.h"
 #include "Messaging/MessageDispatcher.h"
-
+#include "../Raven_SensoryMemory.h"
 
 
 //-------------------------- ctor ---------------------------------------------
@@ -31,7 +31,7 @@ Pellet::Pellet(Raven_Bot* shooter, Vector2D target):
 
         m_dTimeShotIsVisible(script->GetDouble("Pellet_Persistance"))
 {
-  
+  pshooter = shooter;
 }
 
 //------------------------------ Update ---------------------------------------
@@ -103,6 +103,9 @@ void Pellet::TestForImpact()
                               hit->ID(),
                               Msg_TakeThatMF,
                               (void*)&m_iDamageInflicted);
+  int v = pshooter->GetSensoryMem()->getEDMG(hit);
+  pshooter->GetSensoryMem()->setEDMG(hit,v+m_iDamageInflicted);
+
 }
 
 //-------------------------- Render -------------------------------------------

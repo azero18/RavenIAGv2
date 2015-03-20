@@ -218,6 +218,17 @@ Vector2D Raven_Steering::Seek(const Vector2D &target)
 }
 
 
+//NEW FLEE
+Vector2D Raven_Steering::Flee(const Vector2D &target)
+{
+ 
+  Vector2D DesiredVelocity = Vec2DNormalize(m_pRaven_Bot->Pos() - target)
+                            * m_pRaven_Bot->MaxSpeed();
+
+  return (DesiredVelocity - m_pRaven_Bot->Velocity());
+}
+
+
 //--------------------------- Arrive -------------------------------------
 //
 //  This behavior is similar to seek but it attempts to arrive at the

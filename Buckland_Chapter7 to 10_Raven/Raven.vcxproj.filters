@@ -292,6 +292,15 @@
     <ClCompile Include="Goal_Think_X.cpp">
       <Filter>AI\goalsX\composite</Filter>
     </ClCompile>
+    <ClCompile Include="Goal_MoveToPosition_Z.cpp">
+      <Filter>AI\goalsZ\composite</Filter>
+    </ClCompile>
+    <ClCompile Include="Goal_GetItem_Z.cpp">
+      <Filter>AI\goalsZ\composite</Filter>
+    </ClCompile>
+    <ClCompile Include="Goal_FollowPath_Z.cpp">
+      <Filter>AI\goalsZ\composite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raven_Bot.h">
@@ -641,6 +650,15 @@
     </ClInclude>
     <ClInclude Include="Goal_Think_X.h">
       <Filter>AI\goalsX\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="Goal_MoveToPosition_Z.h">
+      <Filter>AI\goalsZ\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="Goal_GetItem_Z.h">
+      <Filter>AI\goalsZ\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="Goal_FollowPath_Z.h">
+      <Filter>AI\goalsZ\composite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

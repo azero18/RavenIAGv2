@@ -31,6 +31,8 @@ public:
   void  SetGoal(Raven_Bot* pEnt);
 
   void  RenderInfo(Vector2D Position, Raven_Bot* pBot);
+
+  int  getTypeNum(){return 4;};
 };
 
 #endif

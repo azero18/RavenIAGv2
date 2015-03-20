@@ -20,7 +20,7 @@ class Goal
 {
 public:
 
-   enum {active, inactive, completed, failed};
+   enum {active, inactive, completed, failed, losing_will};
   
 protected:
 
@@ -34,7 +34,7 @@ protected:
   //completed, failed)
   int             m_iStatus;
 
-
+  double          getItemEvalMod;
   /* the following methods were created to factor out some of the commonality
      in the implementations of the Process method() */
 
@@ -81,6 +81,12 @@ public:
   bool         isActive()const{return m_iStatus == active;}
   bool         isInactive()const{return m_iStatus == inactive;}
   bool         hasFailed()const{return m_iStatus == failed;}
+  //NEW
+  bool		   hasLostWill()const{return m_iStatus == losing_will;}
+
+  double	   GetitemEvalMod(){return getItemEvalMod;}
+  void	       SetitemEvalMod(double val){getItemEvalMod *= val;}
+  void         ResetItemEvalMod(){getItemEvalMod = 1.0;}
   int          GetType()const{return m_iType;}
 
   
@@ -128,7 +134,7 @@ void  Goal<entity_type>::RenderAtPos(Vector2D& pos, TypeToString* tts)const
   if (hasFailed()) gdi->TextColor(255,0,0);
   if (isActive()) gdi->TextColor(0,0,255);
 
-  gdi->TextAtPos(pos.x, pos.y, tts->Convert(GetType())); 
+  gdi->TextAtPos(pos.x, pos.y, tts->Convert(GetType()));  
 }
 
 #endif

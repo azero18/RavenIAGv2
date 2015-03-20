@@ -86,6 +86,23 @@ void Raven_Bot::Spawn(Vector2D pos)
     SetPos(pos);
     m_pWeaponSys->Initialize();
     RestoreHealthToMaximum();
+	//NEW
+	std::list<Raven_Bot*> opponents = GetWorld()->GetAllBots();
+	std::list<Raven_Bot*>::const_iterator curBot = opponents.begin();
+    for (curBot; curBot != opponents.end(); ++curBot)
+    {
+    //make sure the bot is alive and that it is not the owner  
+	
+	  if ((*curBot)->isAlive() && (*curBot != this))
+	  {
+		  bool isVisible = (*curBot)->GetSensoryMem()->isOpponentWithinFOV(this);
+		  if (isVisible)
+		  {
+			  int actualhealth = GetSensoryMem()->getEDMG(*curBot);			  
+			  (*curBot)->GetSensoryMem()->setEDMG(this,0);
+		  }
+	  }
+	}
 }
 
 //-------------------------------- Update -------------------------------------
