@@ -81,6 +81,9 @@ public:
   //it with the path manager
   bool       RequestPathToPosition(Vector2D TargetPos);
 
+  //NEW: cria instancia de A* para busca e registra no Path Manager. usa a heurista Heuristc_Avoid
+  bool       RequestPathToPositionAndAvoid(Vector2D TargetPos, double MaxDistFromEnemy);
+
   //called by an agent after it has been notified that a search has terminated
   //successfully. The method extracts the path from m_pCurrentSearch, adds
   //additional edges appropriate to the search type and returns it as a list of

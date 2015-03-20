@@ -391,11 +391,77 @@ bool Raven_PathPlanner::RequestPathToPosition(Vector2D TargetPos)
 #endif
 
   //create an instance of a the distributed A* search class
-  typedef Graph_SearchAStar_TS<Raven_Map::NavGraph, Heuristic_Euclid> AStar;
+  //typedef Graph_SearchAStar_TS<Raven_Map::NavGraph, Heuristic_Euclid> AStar;
+  typedef Graph_SearchAStar_TS<Raven_Map::NavGraph> AStar;
    
   m_pCurrentSearch = new AStar(m_NavGraph,
                                ClosestNodeToBot,
-                               ClosestNodeToTarget);
+                               ClosestNodeToTarget,
+							   new Heuristic_Euclid<Raven_Map::NavGraph>());
+
+  //and register the search with the path manager
+  m_pOwner->GetWorld()->GetPathManager()->Register(this);
+
+  return true;
+}
+
+
+bool Raven_PathPlanner::RequestPathToPositionAndAvoid(Vector2D TargetPos, double MaxDistFromEnemy) {
+	#ifdef SHOW_NAVINFO
+    debug_con << "------------------------------------------------" << "";
+#endif
+  GetReadyForNewSearch();
+
+  //make a note of the target position.
+  m_vDestinationPos = TargetPos;
+  
+  //find the closest visible node to the bots position
+  int ClosestNodeToBot = GetClosestNodeToPosition(m_pOwner->Pos());
+
+  //remove the destination node from the list and return false if no visible
+  //node found. This will occur if the navgraph is badly designed or if the bot
+  //has managed to get itself *inside* the geometry (surrounded by walls),
+  //or an obstacle.
+  if (ClosestNodeToBot == no_closest_node_found)
+  { 
+#ifdef SHOW_NAVINFO
+    debug_con << "No closest node to bot found!" << "";
+#endif
+
+    return false; 
+  }
+
+  #ifdef SHOW_NAVINFO
+    debug_con << "Closest node to bot is " << ClosestNodeToBot << "";
+#endif
+
+  //find the closest visible node to the target position
+  int ClosestNodeToTarget = GetClosestNodeToPosition(TargetPos);
+  
+  //return false if there is a problem locating a visible node from the target.
+  //This sort of thing occurs much more frequently than the above. For
+  //example, if the user clicks inside an area bounded by walls or inside an
+  //object.
+  if (ClosestNodeToTarget == no_closest_node_found)
+  { 
+#ifdef SHOW_NAVINFO
+    debug_con << "No closest node to target (" << ClosestNodeToTarget << ") found!" << "";
+#endif
+
+    return false; 
+  }
+
+  #ifdef SHOW_NAVINFO
+    debug_con << "Closest node to target is " << ClosestNodeToTarget << "";
+#endif
+
+  //create an instance of a the distributed A* search class
+  typedef Graph_SearchAStar_TS<Raven_Map::NavGraph> AStarAvoid;
+   
+  m_pCurrentSearch = new AStarAvoid(m_NavGraph,
+                               ClosestNodeToBot,
+                               ClosestNodeToTarget,
+							   new Heuristic_Avoid<Raven_Map::NavGraph>(m_pOwner, MaxDistFromEnemy));
 
   //and register the search with the path manager
   m_pOwner->GetWorld()->GetPathManager()->Register(this);

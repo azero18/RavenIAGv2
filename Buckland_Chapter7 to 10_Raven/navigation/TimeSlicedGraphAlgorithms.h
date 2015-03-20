@@ -83,7 +83,7 @@ public:
 //
 //  a A* class that enables a search to be completed over multiple update-steps
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
+template <class graph_type> //NEW: classe alterada, antes era um template <class graph_type, class heuristic>.
 class Graph_SearchAStar_TS : public Graph_SearchTimeSliced<typename graph_type::EdgeType>
 {
 private:
@@ -93,6 +93,9 @@ private:
   typedef typename graph_type::NodeType Node;
 
 private:
+
+  //NEW: guarda uma referencia ao algoritmo heuristico que sera utilizado
+  Heuristic<graph_type>*         heuristic;
 
   const graph_type&              m_Graph;
 
@@ -119,7 +122,8 @@ public:
 
   Graph_SearchAStar_TS(const graph_type& G,
                       int                source,
-                      int                target):Graph_SearchTimeSliced<Edge>(AStar),
+                      int                target,
+					  Heuristic<graph_type>*         h):Graph_SearchTimeSliced<Edge>(AStar), //NEW: deve-se passar a classe que realize o calculo heuristico
   
                                               m_Graph(G),
                                               m_ShortestPathTree(G.NumNodes()),                              
@@ -134,6 +138,8 @@ public:
 
     //put the source node on the queue
     m_pPQ->insert(m_iSource);
+
+	heuristic = h;//NEW: modificacao de receber o Heuristic*
   }
 
    ~Graph_SearchAStar_TS(){delete m_pPQ;}
@@ -159,8 +165,8 @@ public:
 };
 
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
-int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
+template <class graph_type>
+int Graph_SearchAStar_TS<graph_type>::CycleOnce()
 {
   //if the PQ is empty the target has not been found
   if (m_pPQ->empty())
@@ -187,7 +193,7 @@ int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
        pE=ConstEdgeItr.next())
   {
     //calculate the heuristic cost from this node to the target (H)                       
-    double HCost = heuristic::Calculate(m_Graph, m_iTarget, pE->To()); 
+    double HCost = heuristic->Calculate(m_Graph, m_iTarget, pE->To()); //NEW: foi modificado. onde esta um '->' antes era um '::'
 
     //calculate the 'real' cost to this node from the source (G)
     double GCost = m_GCosts[NextClosestNode] + pE->Cost();
@@ -223,9 +229,9 @@ int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
 }
 
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
+template <class graph_type>
 std::list<int> 
-Graph_SearchAStar_TS<graph_type, heuristic>::GetPathToTarget()const
+Graph_SearchAStar_TS<graph_type>::GetPathToTarget()const
 {
   std::list<int> path;
 
@@ -251,9 +257,9 @@ Graph_SearchAStar_TS<graph_type, heuristic>::GetPathToTarget()const
 //
 //  returns the path as a list of PathEdges
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
+template <class graph_type>
 std::list<PathEdge> 
-Graph_SearchAStar_TS<graph_type, heuristic>::GetPathAsPathEdges()const
+Graph_SearchAStar_TS<graph_type>::GetPathAsPathEdges()const
 {
   std::list<PathEdge> path;
 

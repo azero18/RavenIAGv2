@@ -23,6 +23,7 @@
 
 #include "graph/SparseGraph.h"
 #include "misc/PriorityQueue.h"
+#include "AStarHeuristicPolicies.h"
 
 
 //----------------------------- Graph_SearchDFS -------------------------------
@@ -526,7 +527,7 @@ std::list<int> Graph_SearchDijkstra<graph_type>::GetPathToTarget()const
 //
 //  This search is more commonly known as A* (pronounced Ay-Star)
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
+template <class graph_type> //NEW: classe alterada, antes era um template <class graph_type, class heuristic>.
 class Graph_SearchAStar
 {
 private:
@@ -535,6 +536,9 @@ private:
   typedef typename graph_type::EdgeType Edge;
 
 private:
+  
+  //NEW: guarda uma referencia ao algoritmo heuristico que sera utilizado
+  const Heuristic<graph_type>*               heuristic;
 
   const graph_type&              m_Graph;
 
@@ -559,7 +563,8 @@ public:
 
   Graph_SearchAStar(graph_type &graph,
                     int   source,
-                    int   target):m_Graph(graph),
+                    int   target,
+					Heuristic<graph_type>* h):m_Graph(graph),  //NEW: deve-se passar a classe que realize o calculo heuristico
                                   m_ShortestPathTree(graph.NumNodes()),                              
                                   m_SearchFrontier(graph.NumNodes()),
                                   m_GCosts(graph.NumNodes(), 0.0),
@@ -567,6 +572,7 @@ public:
                                   m_iSource(source),
                                   m_iTarget(target)
   {
+	heuristic = h;
     Search();   
   }
  
@@ -582,8 +588,8 @@ public:
 };
 
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
-void Graph_SearchAStar<graph_type, heuristic>::Search()
+template <class graph_type>
+void Graph_SearchAStar<graph_type>::Search()
 {
   //create an indexed priority queue of nodes. The nodes with the
   //lowest overall F cost (G+H) are positioned at the front.
@@ -612,7 +618,7 @@ void Graph_SearchAStar<graph_type, heuristic>::Search()
          pE=ConstEdgeItr.next())
     {
       //calculate the heuristic cost from this node to the target (H)                       
-      double HCost = heuristic::Calculate(m_Graph, m_iTarget, pE->To()); 
+      double HCost = heuristic->Calculate(m_Graph, m_iTarget, pE->To()); //NEW: foi modificado. onde esta um '->', antes era um '::'
 
       //calculate the 'real' cost to this node from the source (G)
       double GCost = m_GCosts[NextClosestNode] + pE->Cost();
@@ -646,8 +652,8 @@ void Graph_SearchAStar<graph_type, heuristic>::Search()
 }
 
 //-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
-std::list<int> Graph_SearchAStar<graph_type, heuristic>::GetPathToTarget()const
+template <class graph_type>
+std::list<int> Graph_SearchAStar<graph_type>::GetPathToTarget()const
 {
   std::list<int> path;
 
