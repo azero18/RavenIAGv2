@@ -78,32 +78,56 @@ BOT 403 IS STUCK!!
 
 this is a bot.
        STATISTICS
+<<<<<<< HEAD
  - Kills = 10
  - Deaths = 5
  - Time has survived = 394.408s ( 65.7347s/lives )
+=======
+ - Kills = 3
+ - Deaths = 3
+ - Time has survived = 86.182s ( 21.5455s/lives )
+>>>>>>> origin/pedro-changes
 
 deleting raven bot (id = 401)
 
 this is a bot.
        STATISTICS
+<<<<<<< HEAD
  - Kills = 12
  - Deaths = 5
  - Time has survived = 394.407s ( 65.7345s/lives )
+=======
+ - Kills = 0
+ - Deaths = 1
+ - Time has survived = 86.246s ( 43.123s/lives )
+>>>>>>> origin/pedro-changes
 
 deleting raven bot (id = 402)
 
 this is a bot Z.
        STATISTICS
+<<<<<<< HEAD
  - Kills = 3
  - Deaths = 4
  - Time has survived = 394.426s ( 78.8852s/lives )
+=======
+ - Kills = 1
+ - Deaths = 2
+ - Time has survived = 86.214s ( 28.738s/lives )
+>>>>>>> origin/pedro-changes
 
 deleting raven bot (id = 403)
 
 this is a bot Z.
        STATISTICS
+<<<<<<< HEAD
  - Kills = 1
  - Deaths = 12
  - Time has survived = 394.202s ( 30.3232s/lives )
+=======
+ - Kills = 4
+ - Deaths = 2
+ - Time has survived = 86.106s ( 28.702s/lives )
+>>>>>>> origin/pedro-changes
 
 deleting raven bot (id = 404)
